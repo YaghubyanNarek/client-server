@@ -8,7 +8,7 @@
 #include <netinet/in.h>
 
 #define ERROR_S "SERVER ERROR: "
-#define DEFAULT_PORT 1601
+#define DEFAULT_PORT 1700
 #define DEFAULT_BUFFER_SIZE 1024
 #define CLIENT_CLOSE_CONNECTION_SYMBOL '#'
 
@@ -46,7 +46,6 @@ int main(int argc, char *argv[]) {
         std::cout << ERROR_S << "Can't accept client" << std::endl;
         return -1;
     }
-
     char buffer[DEFAULT_BUFFER_SIZE];
     bool isExit = false;
     while (client > 0) {
@@ -76,6 +75,10 @@ int main(int argc, char *argv[]) {
         }
         std::cout << "Goodbye client" << std::endl;
         isExit = false;
+        close(server);
+        if(!isExit) {
+            return 0;
+        }
     }
 
     return 0;

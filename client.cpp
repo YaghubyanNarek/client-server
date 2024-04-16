@@ -7,7 +7,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 
-#define DEFAULT_PORT 1601
+#define DEFAULT_PORT 1700
 #define DEFAULT_BUFFER_SIZE 1024
 #define SERVER_IP "127.0.0.1"
 #define CLIENT_CLOSE_CONNECTION_SYMBOL '#'
